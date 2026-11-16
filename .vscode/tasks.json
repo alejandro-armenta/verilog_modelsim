@@ -8,11 +8,25 @@
     {
       "label": "Simulation Build",
       "type": "shell",
-      "command": "./run.sh",
+      "command": "./build.sh",
       "problemMatcher": [],
       "group": {
         "kind": "build",
         "isDefault": true
+      },
+      "presentation": {
+        "focus": false,
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Simulation Run",
+      "type": "shell",
+      "command": "./run.sh",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
       },
       "presentation": {
         "focus": false,
