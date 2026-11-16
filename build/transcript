@@ -1,0 +1,10 @@
+# vsim -c "+typdelays" work.tb_counter -do "log -r /*; run -all; quit -f" 
+# Start time: 17:05:01 on Nov 16,2026
+# Loading work.tb_counter
+# Loading work.counter
+# log -r /*
+#  run -all
+# ** Note: $finish    : /home/alejandro-armenta/Documents/verilog_modelsim/tb/tb_counter.v(52)
+#    Time: 20 ns  Iteration: 0  Instance: /tb_counter
+# End time: 17:05:01 on Nov 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

@@ -10,25 +10,25 @@ z2
 cModel Technology
 Z0 d/home/alejandro-armenta/Documents/verilog_modelsim
 vcounter
-Z1 !s110 1794854130
+Z1 !s110 1794870299
 !i10b 1
-!s100 cN]aofQRKj6OVBbknXe7=3
+!s100 PolHDV7Un@P=S]2SDPzfI0
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IPiz_gB>LQ:=goNVBnA48@0
+IzDDoh2FYG?@zzDVQiS[SR3
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1794853487
+w1794870186
 8src/counter.v
 Fsrc/counter.v
 !i122 0
-L0 2 54
+L0 4 100
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1794854130.000000
-!s107 tb/top.v|src/synthesis.v|src/counter.v|
-Z6 !s90 -work|build/work|+acc=rn|+incdir+src|+incdir+tb|src/counter.v|src/synthesis.v|tb/top.v|
+Z5 !s108 1794870299.000000
+!s107 tb/top.v|tb/tb_counter.v|src/synthesis.v|src/counter.v|
+Z6 !s90 -work|build/work|+acc=rn|+incdir+src|+incdir+tb|src/counter.v|src/synthesis.v|tb/tb_counter.v|tb/top.v|
 !i113 1
 Z7 o-work build/work +acc=rn
 Z8 !s92 -work build/work +acc=rn +incdir+src +incdir+tb
@@ -51,7 +51,31 @@ r1
 !s85 0
 31
 R5
-Z10 !s107 tb/top.v|src/synthesis.v|src/counter.v|
+Z10 !s107 tb/top.v|tb/tb_counter.v|src/synthesis.v|src/counter.v|
+R6
+!i113 1
+R7
+R8
+R9
+vtb_counter
+R1
+!i10b 1
+!s100 =[5o92PVdgF;hcCQ`nE=l3
+R2
+IUGQ>F?Uh@NP5ZfE]O`AiO3
+R3
+R0
+w1794870292
+8tb/tb_counter.v
+Ftb/tb_counter.v
+!i122 0
+L0 4 53
+R4
+r1
+!s85 0
+31
+R5
+R10
 R6
 !i113 1
 R7
