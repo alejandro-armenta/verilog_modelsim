@@ -1,0 +1,22 @@
+# vsim -c "+typdelays" work.top -do "log -r /*; run -all; quit -f" 
+# Start time: 21:54:56 on Nov 15,2026
+# Loading work.top
+# Loading work.register_async
+# log -r /*
+#  run -all
+# ** Error: $hold( posedge clkb:45 ns, sig_a:45500 ps, 1500 ps );
+#    Time: 45500 ps  Iteration: 2  Process: /top/dut/#Setuphold# File: ./../synthesis.v Line: 25
+# ** Error: $setup( sig_a:84500 ps, posedge clkb:85 ns, 1500 ps );
+#    Time: 85 ns  Iteration: 1  Process: /top/dut/#Setuphold# File: ./../synthesis.v Line: 25
+# ** Error: $hold( posedge clkb:435 ns, sig_a:435500 ps, 1500 ps );
+#    Time: 435500 ps  Iteration: 2  Process: /top/dut/#Setuphold# File: ./../synthesis.v Line: 25
+# ** Error: $setup( sig_a:474500 ps, posedge clkb:475 ns, 1500 ps );
+#    Time: 475 ns  Iteration: 1  Process: /top/dut/#Setuphold# File: ./../synthesis.v Line: 25
+# ** Error: $hold( posedge clkb:825 ns, sig_a:825500 ps, 1500 ps );
+#    Time: 825500 ps  Iteration: 2  Process: /top/dut/#Setuphold# File: ./../synthesis.v Line: 25
+# ** Error: $setup( sig_a:864500 ps, posedge clkb:865 ns, 1500 ps );
+#    Time: 865 ns  Iteration: 1  Process: /top/dut/#Setuphold# File: ./../synthesis.v Line: 25
+# ** Note: $finish    : ./../top.v(71)
+#    Time: 1202500 ps  Iteration: 1  Instance: /top
+# End time: 21:54:56 on Nov 15,2026, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0

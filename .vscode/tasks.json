@@ -60,7 +60,7 @@
     {
       "label": "Open Wave",
       "type": "shell",
-      "command": "gtkwave simulation.vcd",
+      "command": "./gtkwave.sh",
       "problemMatcher": [],
       "group": {
         "kind": "build",

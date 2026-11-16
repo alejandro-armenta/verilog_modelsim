@@ -1,4 +1,9 @@
+rm -rf build
 
-rm -rf work vsim.wlf transcript
+mkdir build
 
-vlib work && vlog +acc=rn synthesis.v top.v
+cd build
+
+vlib work 
+
+vlog +acc=rn ./../synthesis.v ./../top.v

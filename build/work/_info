@@ -8,27 +8,27 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/alejandro-armenta/Documents/verilog_modelsim
+Z0 d/home/alejandro-armenta/Documents/verilog_modelsim/build
 vregister_async
-Z1 !s110 1794800657
+Z1 !s110 1794801250
 !i10b 1
 !s100 ^PcV[`oI7Xjm>UB<hBHQ@1
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-Ii>jVOneXm2lgFKECT9J>e1
+IJ<^MDAeITAzW1G@Sf;6PR0
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
 w1794800579
-8synthesis.v
-Fsynthesis.v
+8./../synthesis.v
+F./../synthesis.v
 !i122 0
 L0 3 60
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1794800657.000000
-!s107 top.v|synthesis.v|
-Z6 !s90 +acc=rn|synthesis.v|top.v|
+Z5 !s108 1794801249.000000
+!s107 ./../top.v|./../synthesis.v|
+Z6 !s90 +acc=rn|./../synthesis.v|./../top.v|
 !i113 1
 Z7 o+acc=rn
 Z8 tCvgOpt 0
@@ -37,12 +37,12 @@ R1
 !i10b 1
 !s100 ]ZIZk6J1KWJ_cTM:HL[_40
 R2
-I`PKneDa?:zLAYWc<Q0:PU1
+I3>h0P@NoLGkXDRLF;0Ume1
 R3
 R0
 w1794798546
-8top.v
-Ftop.v
+8./../top.v
+F./../top.v
 !i122 0
 L0 3 74
 R4
@@ -50,7 +50,7 @@ r1
 !s85 0
 31
 R5
-Z9 !s107 top.v|synthesis.v|
+Z9 !s107 ./../top.v|./../synthesis.v|
 R6
 !i113 1
 R7
