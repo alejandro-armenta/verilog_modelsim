@@ -8,41 +8,66 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/alejandro-armenta/Documents/verilog_modelsim/build
-vregister_async
-Z1 !s110 1794801250
+Z0 d/home/alejandro-armenta/Documents/verilog_modelsim
+vcounter
+Z1 !s110 1794854130
 !i10b 1
-!s100 ^PcV[`oI7Xjm>UB<hBHQ@1
+!s100 cN]aofQRKj6OVBbknXe7=3
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IJ<^MDAeITAzW1G@Sf;6PR0
+IPiz_gB>LQ:=goNVBnA48@0
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1794800579
-8./../synthesis.v
-F./../synthesis.v
+w1794853487
+8src/counter.v
+Fsrc/counter.v
 !i122 0
-L0 3 60
+L0 2 54
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1794801249.000000
-!s107 ./../top.v|./../synthesis.v|
-Z6 !s90 +acc=rn|./../synthesis.v|./../top.v|
+Z5 !s108 1794854130.000000
+!s107 tb/top.v|src/synthesis.v|src/counter.v|
+Z6 !s90 -work|build/work|+acc=rn|+incdir+src|+incdir+tb|src/counter.v|src/synthesis.v|tb/top.v|
 !i113 1
-Z7 o+acc=rn
-Z8 tCvgOpt 0
+Z7 o-work build/work +acc=rn
+Z8 !s92 -work build/work +acc=rn +incdir+src +incdir+tb
+Z9 tCvgOpt 0
+vregister_async
+R1
+!i10b 1
+!s100 ^PcV[`oI7Xjm>UB<hBHQ@1
+R2
+If`8E<YRUFD2omT9Nb8Nf^3
+R3
+R0
+w1794800579
+8src/synthesis.v
+Fsrc/synthesis.v
+!i122 0
+L0 3 60
+R4
+r1
+!s85 0
+31
+R5
+Z10 !s107 tb/top.v|src/synthesis.v|src/counter.v|
+R6
+!i113 1
+R7
+R8
+R9
 vtop
 R1
 !i10b 1
 !s100 ]ZIZk6J1KWJ_cTM:HL[_40
 R2
-I3>h0P@NoLGkXDRLF;0Ume1
+I4_9dTbbOXalZW5Y6[HiAb2
 R3
 R0
 w1794798546
-8./../top.v
-F./../top.v
+8tb/top.v
+Ftb/top.v
 !i122 0
 L0 3 74
 R4
@@ -50,8 +75,9 @@ r1
 !s85 0
 31
 R5
-Z9 !s107 ./../top.v|./../synthesis.v|
+R10
 R6
 !i113 1
 R7
 R8
+R9
