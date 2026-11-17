@@ -65,6 +65,26 @@ module tb_counter;
 
     repeat (10) @(posedge clk);
 
+    pause_counting = 1;
+
+    repeat (3) @(posedge clk);
+
+    pause_counting = 0;
+
+    repeat (5) @(posedge clk);
+
+    enable_cnt_up = 0;
+
+    repeat (5) @(posedge clk);
+
+    enable_cnt_dn = 1;
+
+    repeat (10) @(posedge clk);
+
+    enable_cnt_dn = 0;
+
+    repeat (5) @(posedge clk);
+
     $finish;
 
   end
