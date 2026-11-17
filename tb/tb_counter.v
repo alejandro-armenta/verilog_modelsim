@@ -49,6 +49,22 @@ module tb_counter;
     #20;
     resetb = 1;
 
+    @(posedge clk);
+
+    new_cntr_preset = 1;
+    new_cntr_preset_value = 8'd5;
+
+    @(posedge clk);
+
+    new_cntr_preset = 0;
+    new_cntr_preset_value = 8'h00;
+
+    @(posedge clk);
+
+    enable_cnt_up = 1;
+
+    repeat (10) @(posedge clk);
+
     $finish;
 
   end

@@ -57,15 +57,22 @@ module counter (
 
     count255_nxt = count255;
 
+    // este ya tiene que estar reseteado para que pase al siguiente
+
     if (enable_cnt_down_risedge) count255_nxt = cnt_preset_stored;
+
     else if (enable_cnt_up_risedge) count255_nxt = 'd0;
 
     else if (pause_counting) count255_nxt = count255;
 
     else if (enable_cnt_dn && ctr_expired) count255_nxt = cnt_preset_stored;
+
     else if (enable_cnt_dn) count255_nxt = count255 - 1'b1;
 
     else if (enable_cnt_up && ctr_expired) count255_nxt = 'd0;
+
+    // despues se injecta esta
+
     else if (enable_cnt_up) count255_nxt = count255 + 1'b1;
 
   end
@@ -93,6 +100,8 @@ module counter (
       cnt_preset_stored <= cnt_preset_stored_nxt;
 
       ctr_expired <= ctr_expired_next;
+
+      // sino se volveria zero en el mismo ciclo y no
 
       count255 <= count255_nxt;
 
