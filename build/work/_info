@@ -10,53 +10,29 @@ z2
 cModel Technology
 Z0 d/home/alejandro-armenta/Documents/verilog_modelsim
 vcounter
-Z1 !s110 1794878506
+Z1 !s110 1794886889
 !i10b 1
-!s100 Rlj2cAIAX]DAY`1NI=5;W1
+!s100 TVABz;U^JCA9^=8^3@;DJ2
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I;a:f2L:kn2U;EVLn[jRP?0
+I2INL;fO4X_bFHEQ>kS<<F0
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1794878225
-8src/counter.v
-Fsrc/counter.v
+w1794886818
+8src/counter_post_layout.v
+Fsrc/counter_post_layout.v
 !i122 0
-L0 4 109
+L0 1 276
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1794878506.000000
-!s107 tb/top.v|tb/tb_counter.v|src/synthesis.v|src/counter.v|
-Z6 !s90 -work|build/work|+acc=rn|+incdir+src|+incdir+tb|src/counter.v|src/synthesis.v|tb/tb_counter.v|tb/top.v|
+Z5 !s108 1794886889.000000
+!s107 tb/top.v|tb/tb_counter.v|src/counter_post_layout.v|
+Z6 !s90 -work|build/work|+acc=rn|+incdir+src|+incdir+tb|src/counter_post_layout.v|tb/tb_counter.v|tb/top.v|
 !i113 1
 Z7 o-work build/work +acc=rn
 Z8 !s92 -work build/work +acc=rn +incdir+src +incdir+tb
 Z9 tCvgOpt 0
-vregister_async
-R1
-!i10b 1
-!s100 ^PcV[`oI7Xjm>UB<hBHQ@1
-R2
-If`8E<YRUFD2omT9Nb8Nf^3
-R3
-R0
-w1794800579
-8src/synthesis.v
-Fsrc/synthesis.v
-!i122 0
-L0 3 60
-R4
-r1
-!s85 0
-31
-R5
-Z10 !s107 tb/top.v|tb/tb_counter.v|src/synthesis.v|src/counter.v|
-R6
-!i113 1
-R7
-R8
-R9
 vtb_counter
 R1
 !i10b 1
@@ -75,7 +51,7 @@ r1
 !s85 0
 31
 R5
-R10
+Z10 !s107 tb/top.v|tb/tb_counter.v|src/counter_post_layout.v|
 R6
 !i113 1
 R7

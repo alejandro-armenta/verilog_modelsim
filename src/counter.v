@@ -101,8 +101,6 @@ module counter (
 
       ctr_expired <= ctr_expired_next;
 
-      // sino se volveria zero en el mismo ciclo y no
-
       count255 <= count255_nxt;
 
     end
