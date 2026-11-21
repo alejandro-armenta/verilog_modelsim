@@ -1,93 +1,77 @@
 `timescale 1ns / 1ps
 
-module tb_counter;
+module tb_lfsr_counter;
 
   // Testbench signals
-  reg clk;
-  reg resetb;
-  reg new_cntr_preset;
-  reg [7:0] new_cntr_preset_value;
-  reg enable_cnt_up;
-  reg enable_cnt_dn;
-  reg pause_counting;
-
+  reg  clk;
+  reg  resetb;
+  reg  new_cntr_preset;
   wire ctr_expired;
 
   // Instantiate the Device Under Test (DUT)
-  counter dut (
-      .clk(clk),
-      .resetb(resetb),
+  lfsr_counter dut (
+      .clk            (clk),
+      .resetb         (resetb),
       .new_cntr_preset(new_cntr_preset),
-      .new_cntr_preset_value(new_cntr_preset_value),
-      .enable_cnt_up(enable_cnt_up),
-      .enable_cnt_dn(enable_cnt_dn),
-      .pause_counting(pause_counting),
-      .ctr_expired(ctr_expired)
+      .ctr_expired    (ctr_expired)
   );
 
   // Clock generation: 10ns period (100 MHz)
-  initial begin
-    clk = 0;
-    forever #5 clk = ~clk;
-  end
+  initial clk = 0;
+  always #5 clk = ~clk;
 
-  // Main test sequence
-  initial begin
-    // Setup waveform dumping (for GTKWave / Vivado / ModelSim)
-    $dumpfile("counter_waves.vcd");
-    $dumpvars(0, tb_counter);
-
-    // 1. Initialize inputs & assert asynchronous reset
-    resetb = 0;
-    new_cntr_preset = 0;
-    new_cntr_preset_value = 8'd0;
-    enable_cnt_up = 0;
-    enable_cnt_dn = 0;
-    pause_counting = 0;
-
-    #20;
-    resetb = 1;  // Release reset
-    @(posedge clk);
-
-    // 2. Load a preset value (e.g., 5)
-    $display("[%0t] Loading preset value = 5", $time);
-    new_cntr_preset = 1;
-    new_cntr_preset_value = 8'd5;
-    @(posedge clk);
-    new_cntr_preset = 0;
-    @(posedge clk);
-
-    // 3. Test Count Up (0 -> 5 -> wrap to 0)
-    $display("[%0t] Starting Count Up...", $time);
-    enable_cnt_up = 1;
-    repeat (7) @(posedge clk);  // Run enough cycles to expire and wrap around
-
-    // 4. Test Pause Functionality
-    $display("[%0t] Testing Pause...", $time);
-    pause_counting = 1;
-    repeat (3) @(posedge clk);
-    pause_counting = 0;
-    repeat (2) @(posedge clk);
-    enable_cnt_up = 0;
-    @(posedge clk);
-
-    // 5. Test Count Down (5 -> 0 -> wrap to 5)
-    $display("[%0t] Starting Count Down...", $time);
-    enable_cnt_dn = 1;
-    repeat (7) @(posedge clk);  // Run enough cycles to expire and reload preset
-    enable_cnt_dn = 0;
-
-    // 6. Finish simulation
-    #30;
-    $display("[%0t] Simulation complete.", $time);
-    $finish;
-  end
-
-  // Monitor internal state and outputs on every clock edge
+  // Monitor state changes on every rising clock edge
   always @(posedge clk) begin
-    $display("Time=%0t | rst=%b | up=%b dn=%b pause=%b | count=%0d (preset=%0d) | expired=%b",
-             $time, resetb, enable_cnt_up, enable_cnt_dn, pause_counting, dut.count255,
-             dut.cnt_preset_stored, ctr_expired);
+    $display("Time=%0t ns | resetb=%b | preset=%b | lfsr_cnt=%b (0x%h) | ctr_expired=%b", $time,
+             resetb, new_cntr_preset, dut.lfsr_cnt, dut.lfsr_cnt, ctr_expired);
+  end
+
+  // Main stimulus block
+  initial begin
+    // Waveform dump setup (works with Icarus Verilog / GTKWave / Verilator)
+    $dumpfile("lfsr_counter.vcd");
+    $dumpvars(0, tb_lfsr_counter);
+
+    // 1. Initialize inputs and assert active-low reset
+    resetb          = 0;
+    new_cntr_preset = 0;
+    #12;  // Hold reset across a clock edge
+
+    // 2. Release reset and let the counter run through a full 15-state cycle
+    resetb = 1;
+    $display("--- Starting full 15-state sequence ---");
+
+    // Cycle 0 is 4'b1111; Cycle 14 should reach 4'b0111 and assert ctr_expired
+    repeat (14) @(posedge clk);
+    #1;  // Small delay to sample combinational output after clock edge
+    if (ctr_expired !== 1'b1)
+      $error("FAIL: Expected ctr_expired=1 at Cycle 14 (state 0111), got %b", ctr_expired);
+    else $display("PASS: ctr_expired asserted properly at state 4'b0111!");
+
+    // 3. Step one more cycle to verify wrap-around back to 4'b1111
+    @(posedge clk);
+    #1;
+    if (dut.lfsr_cnt !== 4'b1111 || ctr_expired !== 1'b0)
+      $error("FAIL: Expected wrap-around to 4'b1111 with ctr_expired=0");
+    else $display("PASS: Wrapped back to 4'b1111 cleanly!");
+
+    // 4. Advance a few cycles, then test synchronous new_cntr_preset
+    repeat (4) @(posedge clk);
+    $display("--- Testing synchronous preset ---");
+    @(negedge clk);
+    new_cntr_preset = 1;
+    @(posedge clk);
+    #1;
+    if (dut.lfsr_cnt !== 4'b1111) $error("FAIL: Synchronous preset did not load 4'b1111");
+    else $display("PASS: Synchronous preset loaded 4'b1111!");
+
+    @(negedge clk);
+    new_cntr_preset = 0;
+
+    // 5. Run a few more cycles and finish
+    repeat (3) @(posedge clk);
+    $display("--- Simulation Complete ---");
+    $finish;
   end
 
 endmodule

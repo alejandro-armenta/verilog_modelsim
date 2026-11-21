@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 d/home/alejandro-armenta/Documents/verilog_modelsim
 vcounter
-Z1 !s110 1795238668
+Z1 !s110 1795286181
 !i10b 1
 !s100 <EK18D>cLF@6HkSP5lTaV2
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -26,9 +26,9 @@ Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1795238668.000000
-!s107 tb/top.v|tb/tb_counter.v|src/synthesis.v|src/lfsr_counter.v|src/counter.v|
-Z6 !s90 -work|build/work|+acc=rn|+incdir+src|+incdir+tb|src/counter.v|src/lfsr_counter.v|src/synthesis.v|tb/tb_counter.v|tb/top.v|
+Z5 !s108 1795286181.000000
+!s107 tb/top.v|tb/tb_lfsr_counter.v|tb/tb_counter.v|src/synthesis.v|src/lfsr_counter.v|src/counter.v|
+Z6 !s90 -work|build/work|+acc=rn|+incdir+src|+incdir+tb|src/counter.v|src/lfsr_counter.v|src/synthesis.v|tb/tb_counter.v|tb/tb_lfsr_counter.v|tb/top.v|
 !i113 1
 Z7 o-work build/work +acc=rn
 Z8 !s92 -work build/work +acc=rn +incdir+src +incdir+tb
@@ -36,22 +36,22 @@ Z9 tCvgOpt 0
 vlfsr_counter
 R1
 !i10b 1
-!s100 REiE1j=IZNjD8jzlYM`ih1
+!s100 19XYPl=C>=K0`WQ9gBfl10
 R2
-IE6mQJ9:UZBkIT=HczGYWU2
+I2O<HeXS`bj_K@VI4DN8;D3
 R3
 R0
-w1795238666
+w1795284777
 8src/lfsr_counter.v
 Fsrc/lfsr_counter.v
 !i122 0
-L0 1 14
+L0 1 49
 R4
 r1
 !s85 0
 31
 R5
-Z10 !s107 tb/top.v|tb/tb_counter.v|src/synthesis.v|src/lfsr_counter.v|src/counter.v|
+Z10 !s107 tb/top.v|tb/tb_lfsr_counter.v|tb/tb_counter.v|src/synthesis.v|src/lfsr_counter.v|src/counter.v|
 R6
 !i113 1
 R7
@@ -94,6 +94,30 @@ w1794878506
 Ftb/tb_counter.v
 !i122 0
 L0 4 89
+R4
+r1
+!s85 0
+31
+R5
+R10
+R6
+!i113 1
+R7
+R8
+R9
+vtb_lfsr_counter
+R1
+!i10b 1
+!s100 n]NKl3WMJ2:Ga_FKIll4^3
+R2
+IAY39gWF7:h1Le:8a6:>fe3
+R3
+R0
+w1795285922
+8tb/tb_lfsr_counter.v
+Ftb/tb_lfsr_counter.v
+!i122 0
+L0 1 27
 R4
 r1
 !s85 0

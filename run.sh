@@ -1,2 +1,2 @@
 cd build
-vsim -c +typdelays work.tb_counter -do "log -r /*; run -all; quit -f"
+vsim -c +typdelays work.tb_lfsr_counter -do "log -r /*; run -all; quit -f"

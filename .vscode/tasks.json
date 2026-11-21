@@ -16,7 +16,7 @@
       },
       "presentation": {
         "focus": false,
-        "reveal": "always"
+        "reveal": "never"
       }
     },
     {
@@ -30,7 +30,7 @@
       },
       "presentation": {
         "focus": false,
-        "reveal": "always"
+        "reveal": "never"
       }
     },
     {
