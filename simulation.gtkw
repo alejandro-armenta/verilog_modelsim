@@ -22,7 +22,7 @@
 tb_counter.dut.clk
 [color] 2
 tb_counter.dut.resetb
-[color] 2
+[color] 2/
 tb_counter.dut.new_cntr_preset
 @22
 [color] 2
